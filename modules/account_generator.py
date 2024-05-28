@@ -22,7 +22,7 @@ def generate_random_password():
 
 def generate_random_birth_date():
     start_date = datetime.strptime('1950-01-01', '%Y-%m-%d')
-    end_date = datetime.strptime('2003-12-31', '%Y-%m-%d')
+    end_date = datetime.strptime('2024-12-31', '%Y-%m-%d')
     random_date = start_date + (end_date - start_date) * random.random()
     return random_date.strftime('%m/%d/%Y')
 

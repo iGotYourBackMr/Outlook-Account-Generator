@@ -145,10 +145,10 @@ if __name__ == "__main__":
                 }
                 accounts.append(account_details)
                 send_discord_message(
-                    f"name:\n {account_details['name']}\n"
-                    f"birth:\n {account_details['birth']}\n"
-                    f"email:\n {account_details['email']}\n"
-                    f"password:\n {account_details['password']}\n\n"
+                    f"Name: {account_details['name']}\n"
+                    f"Birth: {account_details['birth']}\n"
+                    f"Email: {account_details['email']}\n"
+                    f"Password: {account_details['password']}\n"
                 )
                 print(f"Account created: {username}@outlook.com with password: {password}")
             else:
@@ -165,7 +165,11 @@ if __name__ == "__main__":
         txt_file_path = os.path.join(folder_path, 'created_accounts.txt')
         with open(txt_file_path, mode='a', newline='') as file:
             for account in accounts:
-                file.write(f"name:\n {account['name']}\n")
-                file.write(f"birth:\n {account['birth']}\n")
-                file.write(f"email:\n {account['email']}\n")
-                file.write(f"password:\n {account['password']}\n\n")
+                file.write(
+                    f"Account Details:\n"
+                    f"----------------\n"
+                    f"Name:       {account['name']}\n"
+                    f"Birth:      {account['birth']}\n"
+                    f"Email:      {account['email']}\n"
+                    f"Password:   {account['password']}\n\n"
+                )
