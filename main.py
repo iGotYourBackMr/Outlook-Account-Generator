@@ -14,11 +14,16 @@ from modules.account_generator import (
 )
 from modules.discord_notifier import send_discord_message
 from capsolver import capsolver
-from config import CAPSOLVER_API_KEY
+from config import CAPSOLVER_API_KEY, WEBHOOK_URL
 
-capsolver.api_key = CAPSOLVER_API_KEY
+if CAPSOLVER_API_KEY:
+    capsolver.api_key = CAPSOLVER_API_KEY
 
 def solve_captcha(driver):
+    if not CAPSOLVER_API_KEY:
+        print("CAPSolver API key not provided. Manual CAPTCHA solving required.")
+        return False
+
     try:
         captcha_element = WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'g-recaptcha'))

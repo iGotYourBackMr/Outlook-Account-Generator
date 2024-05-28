@@ -1,4 +1,2 @@
-# config.py
-
-CAPSOLVER_API_KEY = 'YOUR_API_KEY'
-WEBHOOK_URL = 'YOUR_WEBHOOK_URL'
+CAPSOLVER_API_KEY = ''  # Leave empty if not using CAPSolver
+WEBHOOK_URL = ''  # Leave empty if not using Discord webhook

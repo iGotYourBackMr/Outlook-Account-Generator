@@ -1,6 +1,17 @@
+Sure, here is the updated README with instructions on how to clone the repository:
+
 ## Project Setup Guide
 
-### Step 1: Install Python
+### Step 1: Clone the Repository
+1. **Download Git**: [Git Download](https://git-scm.com/downloads) and install it following the instructions for your operating system.
+2. **Clone the Repository**: Open your terminal or command prompt and run the following command:
+
+    ```sh
+    git clone https://github.com/iGotYourBackMr/Outlook-Account-Generator.git
+    cd Outlook-Account-Generator
+    ```
+
+### Step 2: Install Python
 1. **Download Python**: [Python Download](https://www.python.org/downloads/)
 2. **Install Python**: Follow the installation instructions for your operating system.
 3. **Verify Python Installation**: Open your terminal or command prompt and run:
@@ -9,14 +20,14 @@
     python --version
     ```
 
-### Step 2: Verify pip Installation
+### Step 3: Verify pip Installation
 Pip comes pre-installed with Python. Verify its installation with:
 
 ```sh
 pip --version
 ```
 
-### Step 3: Install Required Python Packages
+### Step 4: Install Required Python Packages
 Run the following commands to install the necessary Python packages:
 
 ```sh
@@ -26,27 +37,25 @@ pip install capsolver
 pip install requests
 ```
 
-### Step 4: Configure the Project
-1. **Extract the Project Files**: Ensure you have all the project files extracted into a directory.
-
-2. **Navigate to the Project Directory**: Open your terminal or command prompt and navigate to the project directory:
+### Step 5: Configure the Project
+1. **Navigate to the Project Directory**: Ensure you are in the project directory:
 
     ```sh
-    cd path/to/your_project_directory
+    cd Outlook-Account-Generator
     ```
 
-3. **Create `config.py`**: Create a `config.py` file with your CAPSolver API key and Discord webhook URL. Use a text editor to create this file in the project directory with the following content:
+2. **Create `config.py`**: Create a `config.py` file with your CAPSolver API key and, optionally, your Discord webhook URL. Use a text editor to create this file in the project directory with the following content:
 
     ```python
-    CAPSOLVER_API_KEY = 'your_capsolver_api_key'
-    WEBHOOK_URL = 'your_discord_webhook_url'
+    CAPSOLVER_API_KEY = ''  # Leave empty if not using CAPSolver
+    WEBHOOK_URL = ''  # Leave empty if not using Discord webhook
     ```
 
-### Step 5: Project Directory Structure
+### Step 6: Project Directory Structure
 Ensure your project directory looks like this:
 
 ```
-your_project_directory/
+Outlook-Account-Generator/
 │
 ├── modules/
 │   ├── __init__.py
@@ -58,7 +67,7 @@ your_project_directory/
 ├── created_accounts.txt
 ```
 
-### Step 6: Run the Script
+### Step 7: Run the Script
 1. **Run the Script**: In your terminal or command prompt, run the script:
 
     ```sh
@@ -69,12 +78,21 @@ your_project_directory/
 
 ### Important Note
 - **Manual CAPTCHA Solving**: The automatic CAPTCHA solver is currently broken. You will need to solve CAPTCHAs manually during the account creation process. When prompted, solve the CAPTCHA in the browser and press Enter in the terminal to continue.
+- **Discord Webhook**: If you choose not to use the Discord webhook, you can leave `WEBHOOK_URL` empty, and the script will skip sending notifications to Discord.
+- **CAPSolver**: If you choose not to use CAPSolver, you can leave `CAPSOLVER_API_KEY` empty, and the script will require manual CAPTCHA solving.
 
 ### Example Workflow
 
 Here’s a complete example of the workflow:
 
-1. **Install Required Packages**:
+1. **Clone the Repository**:
+
+    ```sh
+    git clone https://github.com/iGotYourBackMr/Outlook-Account-Generator.git
+    cd Outlook-Account-Generator
+    ```
+
+2. **Install Required Packages**:
 
     ```sh
     pip install selenium
@@ -83,17 +101,17 @@ Here’s a complete example of the workflow:
     pip install requests
     ```
 
-2. **Create `config.py`**:
+3. **Create `config.py`**:
 
     ```python
-    CAPSOLVER_API_KEY = 'your_capsolver_api_key'
-    WEBHOOK_URL = 'your_discord_webhook_url'
+    CAPSOLVER_API_KEY = ''  # Leave empty if not using CAPSolver
+    WEBHOOK_URL = ''  # Leave empty if not using Discord webhook
     ```
 
-3. **Run the Script**:
+4. **Run the Script**:
 
     ```sh
     python main.py
     ```
 
-By following these steps, anyone should be able to set up and run your project successfully, while being aware of the need to manually solve CAPTCHAs.
+By following these steps, anyone should be able to set up and run your project successfully, while being aware of the need to manually solve CAPTCHAs and optionally use Discord notifications and CAPSolver.
