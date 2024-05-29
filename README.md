@@ -1,5 +1,3 @@
-Sure, here is the updated README with instructions on how to clone the repository:
-
 ## Project Setup Guide
 
 ### Step 1: Clone the Repository
